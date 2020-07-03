@@ -148,7 +148,6 @@ static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interac
 static void arrange(Monitor *m);
 static void arrangemon(Monitor *m);
 static void attach(Client *c);
-static void attachaside(Client *c);
 static void attachBelow(Client *c);
 static void attachstack(Client *c);
 static void buttonpress(XEvent *e);
@@ -415,7 +414,13 @@ attachBelow(Client *c)
 {
 	//If there is nothing on the monitor or the selected client is floating, attach as normal
 	if(c->mon->sel == NULL || c->mon->sel->isfloating) {
-		attachaside(c);
+        Client *at = nexttagged(c);
+        if(!at) {
+            attach(c);
+            return;
+            }
+        c->next = at->next;
+        at->next = c;
 		return;
 	}
 
@@ -425,18 +430,6 @@ attachBelow(Client *c)
 	c->mon->sel->next = c;
 
 }
-
-void
-attachaside(Client *c) {
-	Client *at = nexttagged(c);
-	if(!at) {
-		attach(c);
-		return;
-		}
-	c->next = at->next;
-	at->next = c;
-}
-
 
 void
 attachstack(Client *c)
