@@ -30,7 +30,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor    scratch key */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,         0  },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1,         0  },
-	{ "st",      NULL,     NULL,           0,         0,          1,          -1,        -1,         0  },
+	{ "St",      NULL,     NULL,           0,         0,          1,          -1,        -1,         0  },
 	{ "St",       NULL,    "floating",     0,         1,          1,          -1,        -1,         0  },
 	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1,         0  }, /* xev */
 	{ NULL,      NULL,     "scratchpad",   0,         1,          0,           0,        -1,        's' },
