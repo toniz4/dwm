@@ -10,14 +10,15 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh = 12; /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "scientifica:size=8","Misc Stlarch:size=8", "Siji:size=8","JoyPixels:size=8", };
 static const char dmenufont[]       = "scientifica:size=8";
-static const char col_bg[]          = "#1d1f21";
-static const char col_fg[]          = "#c5c8c6";
-static const char col_sel[]         = "#373b41";
-static const char col_bor[]         = "#ffffff";
+static const char col_bg[]          = "#fdf6e3";
+static const char col_fg[]          = "#002b36";
+static const char col_fgrev[]       = "#CDDCB9";
+static const char col_sel[]         = "#586e75";
+static const char col_bor[]         = "#586e75";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_fg,    col_bg,    col_bg },
-	[SchemeSel]  = { col_fg,    col_sel,   col_fg },
+	[SchemeSel]  = { col_fgrev, col_sel,   col_bor },
 };
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
