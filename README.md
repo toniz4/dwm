@@ -18,7 +18,7 @@
 - [secret link](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## How to install
-- make sure you have **libxft-bgra**, otherwise dwm will crash when trying to load emojis
+- make sure you have **libxft-bgra**, otherwise dwm will crash when trying to load colored emojis
 ```bash
 $ git clone https://github.com/toniz4/dwm 
 $ cd dwm

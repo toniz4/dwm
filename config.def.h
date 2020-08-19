@@ -1,23 +1,23 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh = 12; /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "scientifica:size=8","Misc Stlarch:size=8", "Siji:size=8","JoyPixels:size=8", };
+static const char *fonts[]          = { "scientifica:size=8","Misc Stlarch:size=8", "Siji:size=8","Noto Emoji:size=9", };
 static const char dmenufont[]       = "scientifica:size=8";
 static const char col_bg[]          = "#fdf6e3";
 static const char col_fg[]          = "#002b36";
 static const char col_fgrev[]       = "#eee8d5";
 static const char col_sel[]         = "#586e75";
-static const char *colors[][3]      = {
+static const char *colors[2][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_fg,    col_bg,    col_bg },
-	[SchemeSel]  = { col_fgrev, col_sel,   col_fg },
+	[SchemeSel]  = { col_fgrev, col_sel,   col_sel },
 };
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -29,9 +29,8 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor    scratch key */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,         0  },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1,         0  },
-	{ "St",      NULL,     NULL,           0,         0,          1,          -1,        -1,         0  },
-	{ "St",       NULL,    "floating",     0,         1,          1,          -1,        -1,         0  },
+	{ "St",		 NULL,     NULL,           0,         0,          1,		   0,        -1,         0  },
+	{ "St",		 NULL,     "floating",     0,         1,          1,          -1,        -1,         0  },
 	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1,         0  }, /* xev */
 	{ NULL,      NULL,     "scratchpad",   0,         1,          0,           0,        -1,        's' },
 	{ NULL,      NULL,     "ncmpcpp",      0,         1,          0,           0,        -1,        'n' },
@@ -122,6 +121,8 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
 	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
 	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
+	{ ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} },
+	{ ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
