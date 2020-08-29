@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor    scratch key */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,         0  },
+	{ NULL,		 NULL,     "umpv",         0,         1,          0,           0,        -1,        'u'  },
 	{ "St",		 NULL,     NULL,           0,         0,          1,		   0,        -1,         0  },
 	{ "St",		 NULL,     "floating",     0,         1,          1,          -1,        -1,         0  },
 	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1,         0  }, /* xev */
@@ -69,8 +70,9 @@ static const char *termcmd[]  = { "st", NULL };
 
 #include "movestack.c"
 /*First arg only serves to match against key in rules*/
-static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL}; 
-static const char *scratchpadcmdmusic[] = {"n", "st", "-t", "ncmpcpp", "music", NULL}; 
+static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL};
+static const char *scratchpadcmdmusic[] = {"n", "st", "-t", "ncmpcpp", "music", NULL};
+static const char *scratchpadumpv[] = {"u", "umpv", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -78,6 +80,7 @@ static Key keys[] = {
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_o,      togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_m,      togglescratch,  {.v = scratchpadcmdmusic } },
+	{ MODKEY,                       XK_u,      togglescratch,  {.v = scratchpadumpv } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
