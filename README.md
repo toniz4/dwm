@@ -4,13 +4,14 @@
 ## Patches
 - attatchasideandbellow (made partialy by me)
 - center (modified patch to always center floating clients)
+- cyclelayouts 
 - movestack
 - pertag
-- uselessgaps
 - scratchpad
-- cyclelayouts 
 - statuscmd (use it together with dwmblockscmd)
 - swalow
+- uselessgaps
+- custom patch to move all unfocused windows to another tag (with mod + alt + tag)
 
 ## Bidings
 - read config.h
