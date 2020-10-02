@@ -30,8 +30,8 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor    scratch key */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,         0  },
 	{ NULL,		 NULL,     "umpv",         0,         1,          0,           0,        -1,        'u'  },
-	{ "St",		 NULL,     NULL,           0,         0,          1,		   0,        -1,         0  },
-	{ "St",		 NULL,     "floating",     0,         1,          1,          -1,        -1,         0  },
+	{ "st",		 NULL,     NULL,           0,         0,          1,		   0,        -1,         0  },
+	{ "st",		 NULL,     "floating",     0,         1,          1,          -1,        -1,         0  },
 	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1,         0  }, /* xev */
 	{ NULL,      NULL,     "scratchpad",   0,         1,          0,           0,        -1,        's' },
 	{ NULL,      NULL,     "ncmpcpp",      0,         1,          0,           0,        -1,        'n' },
@@ -58,6 +58,7 @@ static const Layout layouts[] = {
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|Mod1Mask, 				KEY,      tagall,	      {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -72,7 +73,7 @@ static const char *termcmd[]  = { "st", NULL };
 /*First arg only serves to match against key in rules*/
 static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL};
 static const char *scratchpadcmdmusic[] = {"n", "st", "-t", "ncmpcpp", "music", NULL};
-static const char *scratchpadumpv[] = {"u", "umpv", NULL};
+static const char *scratchpadumpv[] = {"u", "umpv", "/home/cassio/pics/photos/background.png", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
