@@ -227,8 +227,8 @@ static void sigdwmblocks(const Arg *arg);
 static void spawn(const Arg *arg);
 static void spawnscratch(const Arg *arg);
 static void tag(const Arg *arg);
-static void tagall(const Arg *arg);
 static void tagmon(const Arg *arg);
+static void tagunfocused(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
@@ -2006,11 +2006,11 @@ tag(const Arg *arg)
 }
 
 void
-tagall(const Arg *arg)
+tagunfocused(const Arg *arg)
 {
 	Client *c = NULL;
-	int n;
 	Client *nbc;
+	int n;
 
 	for (n = 0, nbc = nexttiled(selmon->clients); nbc; nbc = nexttiled(nbc->next), n++);
 
