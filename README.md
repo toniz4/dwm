@@ -1,5 +1,5 @@
 # Yet Another Dwm Fork
-![screenshot](https://github.com/toniz4/dwm/blob/master/screenshots/2020-06-09-195656_1366x768_scrot.png)
+![screenshot](screenshot.png)
 
 ## Patches
 - attatchasideandbellow (made partialy by me)

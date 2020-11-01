@@ -15,18 +15,14 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh = 12; /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "scientifica:size=8","Misc Stlarch:size=8", "Siji:size=8","Noto Emoji:size=9", };
 static const char dmenufont[]       = "scientifica:size=8";
-static const char col_bg[]          = "#eeeeee";
-static const char col_fg[]          = "#444444";
-static const char col_sel[]         = "#0087af";
-static const char *colors[2][3]      = {
+static const char col_bg[]          = "#fbf3db";
+static const char col_fg[]          = "#53676d";
+static const char col_sel[]         = "#006dce";
+static const char *colors[7][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, col_fg, col_cyan },
-	[SchemeSel]  = { col_fg, col_fg,  col_cyan  },
-	[SchemeStatus]  = { col_fg, col_fg,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_fg, col_fg,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = { col_fg, col_fg,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]  = { col_fg, col_fg,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
-    [SchemeInfoNorm]  = { col_fg, col_fg,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeNorm] = { col_fg, col_bg, col_bg },
+	[SchemeSel]  = { col_bg, col_sel,  col_sel  },
+    [SchemeInfo]  = { col_fg, "#e9e4d0",  col_sel  },
 };
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
